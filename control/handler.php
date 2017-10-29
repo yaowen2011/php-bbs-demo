@@ -1,6 +1,6 @@
 <?php
 /**
- * 主要用来处理接口
+ * 主要用来处理ajax接口
  */
 //include_once ROOT_DIR . '/lib/conn.php';
 include_once ROOT_DIR . '/control/base.php';
@@ -151,14 +151,41 @@ class handler extends base {
             comment_time='%s',
             category='%d'
             WHERE comment_id = %d
-        ", $comment_title, $content, date('Y-m-d H:i:s'), $category), $_GET['comment_id'];
+                AND 
+                  name='%s'
+        ", $comment_title, $content, date('Y-m-d H:i:s'), $category, $comment_id, $_SESSION['name']);
 //        echo $sql;
         $ret = mysqli_query($this->link, $sql);
         if ($ret) {
-            $ret = ['status'=>0, 'msg'=>$sql];
+            $ret = ['status'=>0, 'msg'=>$sql, 'data'=>['comment_id'=>$comment_id]];
             $this->ajax($ret);
         } else {
-            throw new \Exception('数据写入异常', 102);
+            throw new \Exception('数据更新异常', 102);
+        }
+    }
+
+    /**
+     * 删除接口
+     */
+    public function del() {
+        if ( ! $_GET) {
+            throw new \Exception("参数错误", 101);
+        }
+        foreach ($_GET as $k=>$item) {
+            $$k = trim($item);
+        }
+        $sql = sprintf("delete from comment 
+            WHERE comment_id = %d 
+                AND 
+                  name='%s'
+        ", (int)$comment_id, $_SESSION['name']);
+//        echo $sql;
+        mysqli_query($this->link, $sql);
+        if (mysqli_affected_rows($this->link) > 0) {
+//            $this->ajax(['status'=>0, 'msg'=>'ok']);
+            header('Location: index.php');
+        } else {
+            throw new \Exception('删除失败', 101);
         }
     }
 

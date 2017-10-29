@@ -6,11 +6,11 @@ use messageboard;
 -- 创建数据表
 create table user(
     user_id int primary key auto_increment,
-    name varchar(10) not null unique key,
-    password varchar(50) not null,
+    name varchar(16) not null unique key,
+    password varchar(64) not null,
     sex char(2) not null default "1",
     phonenumber varchar(11),
-    profile varchar(40) not null default "./pic/default.jpg"
+    profile varchar(64) not null default "./pic/default.jpg"
 )charset=utf8;
 
 

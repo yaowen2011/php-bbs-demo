@@ -9,6 +9,7 @@ include_once ROOT_DIR . '/view/common/header.php';
         <div class="msg">
             <form class="msg-form" action="">
                 <input type="hidden" name="name" value="<?php echo $_SESSION['name']?>">
+                <input type="hidden" name="comment_id" value="<?php echo $data['info']['comment_id']?>">
                 <ul>
                     <li><label>类别</label>
                         <div class="input">
@@ -29,12 +30,14 @@ EOD;
                     </li>
                     <li><label>标题</label>
                         <div class="input">
-                            <input name="comment_title" type="text">
+                            <input name="comment_title" type="text" value="<?php echo $data['info']['comment_title']?>">
                         </div>
                     </li>
                     <li><label>内容</label>
                         <div class="input">
-                            <textarea name="content" cols="70" rows="10"></textarea>
+                            <textarea name="content" cols="70" rows="10">
+                                <?php echo $data['info']['content']?>
+                            </textarea>
                         </div>
                     </li>
                     <li><label></label>
@@ -72,10 +75,8 @@ EOD;
                 dataType: "json",
                 url: "index.php?a=handler&m=editMessage",
                 success: function (data) {
-                    //
                     if (data.status === 0) {
-//                        location.href = "index.php?category_id=";
-                        location.href = "index.php";
+                        location.href = "index.php?m=info&comment_id=" + data.data.comment_id;
                     } else {
                         //location.href = "";
                     }

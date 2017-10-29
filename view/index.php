@@ -10,6 +10,7 @@
     if ($data['rowList']) {
         echo '<ul class="clearfix box w">';
         foreach ($data['rowList'] as $v) {
+            $v['content'] = preg_replace("/<img.+?>/", '', $v['content']);
             $li = <<<EOD
             <a href="index.php?m=info&comment_id={$v['comment_id']}">            
                 <li class="fl">
@@ -17,7 +18,7 @@
                     <div class="msg-content">{$v['content']}</div>
                     <div class="msg-author clearfix">
                         <span class="fl">作者：{$v['name']}</span>
-                        <span class="fr"><img src="../public/images/avatar.jpg" alt=""></span>
+                        <span class="fr"><img src="..{$v['profile']}" alt=""></span>
                     </div>
                 </li>
             </a>

@@ -1,6 +1,6 @@
 <?php
 /**
- * 主要用来显示页面
+ * 主要用来显示对应页面
  */
 include_once ROOT_DIR . '/control/base.php';
 class index extends base {
@@ -20,7 +20,11 @@ class index extends base {
         if ($category_id > 0) {
             $sql = sprintf("SELECT * FROM comment WHERE category='%d'", $category_id);
         } else {
-            $sql = sprintf("SELECT * FROM comment ");
+            $sql = sprintf("SELECT tbA.*, tbB.profile FROM comment as tbA 
+                LEFT JOIN user as tbB
+                ON 
+                tbA.name = tbB.name
+            ");
         }
         $mysqliRet = mysqli_query($this->link, $sql);
         if ( ! $mysqliRet->num_rows) {
@@ -78,8 +82,11 @@ class index extends base {
 //        mysqli_fetch_assoc($mysqliRet);
         $rowList = mysqli_fetch_all($mysqliRet, MYSQLI_ASSOC);
 
+        $sql = sprintf("SELECT * FROM comment WHERE comment_id=%d", (int)$_GET['comment_id']);
+        $mysqliRet = mysqli_query($this->link, $sql);
+        $info = mysqli_fetch_assoc($mysqliRet);
 
-        $this->render('leaveMessage', ['rowList'=>$rowList]);
+        $this->render('editMessage', ['info'=>$info, 'rowList'=>$rowList]);
     }
 
 
