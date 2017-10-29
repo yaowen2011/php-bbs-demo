@@ -1,0 +1,44 @@
+.reg ul {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 2.5;
+}
+
+.reg ul li {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.reg label {
+    width: 20%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 40px;
+    line-height: 26px;
+}
+
+.reg .input {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 30%;
+    outline: none;
+    height: 26px;
+    line-height: 1;
+}
+
+.reg .warn {
+    display: inline-block;
+    width: 30%;
+    color: red;
+}
+
+.reg .reg-btn {
+    background-color: rgb(236, 108, 108);
+    border: none;
+    outline: none;
+    border-radius: 2px 2px 2px 2px;
+    color: #fff;
+    cursor: pointer;
+}

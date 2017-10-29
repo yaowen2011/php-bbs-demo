@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+body {
+    font-family: '微软雅黑', '宋体';
+    font-size: 14px;
+}
+
+input, img {
+    vertical-align: middle;
+}
+
+.off {
+    display: none;
+}
+
+.on {
+    display: block;
+}
+
+/*版心*/
+.w {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/*通用样式也放在这里*/
+.msg-tips {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    /*height: 200px;*/
+    padding: 15px;
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    background-color: rgba(255, 153, 153, 0.8);
+    border-radius: 4px 4px 4px 4px;
+}
+

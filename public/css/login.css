@@ -1,0 +1,35 @@
+.login ul {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 2.5;
+}
+
+.login ul li {
+    text-align: center;
+}
+
+.login label {
+    width: 40%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 20px;
+    line-height: 26px;
+}
+
+.login input {
+    box-sizing: border-box;
+    width: 50%;
+    outline: none;
+    height: 26px;
+    line-height: 1;
+}
+
+.login .login-btn {
+    background-color: rgb(236, 108, 108);
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,96 @@
+.header {
+    line-height: 1.8;
+    font-size: 18px;
+    color: #666;
+}
+
+.header .w {
+    background-color: rgb(228, 191, 199);
+}
+
+.header  a {
+    padding: 10px 20px;
+    color: #666;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.nav .w {
+    background-color: rgb(236, 108, 108);
+}
+
+.nav .w li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    text-align: center;
+}
+
+.nav .w li.current {
+    background-color: rgb(238, 192, 192);
+}
+
+.nav .w li:hover {
+    background-color: rgb(238, 192, 192);
+}
+
+.nav li a {
+    color: #fff;
+    line-height: 2;
+}
+
+.main .tips {
+    text-align: center;
+    font-size: 22px;
+    padding-top: 16px;
+    color: rgb(211, 101, 101);
+}
+
+.main .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*padding-top: 8px;*/
+}
+
+.main .box a {
+    display: block;
+    width: 32%;
+    border-top: 3px solid pink;
+    margin-top: 8px;
+    color: #777;
+}
+.main li {
+    width: 100%;
+}
+
+.main li .msg-title {
+    width: 100%;
+    font-size: 16px;
+    line-height: 2.6;
+    font-weight: normal;
+    /*width: 100%;*/
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.main li .msg-content {
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 94px;
+}
+
+.main li .msg-author {
+    line-height: 60px;
+    color: rgb(209, 101, 29);
+}
+
+.main li .msg-author img {
+    width: 60px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px black;
+}

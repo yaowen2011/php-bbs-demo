@@ -1,0 +1,41 @@
+.title {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 22px;
+    line-height: 2.3;
+    font-weight: normal;
+    border-bottom: 3px solid lightcoral;
+}
+
+.author {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    line-height: 2.5;
+    border-bottom: 1px solid lightgrey;
+}
+.author .txt {
+    color: #777;
+    margin-right: 20px;
+}
+
+.author .del-btn {
+        margin-left: 50px;
+}
+
+.author .edit {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.author .edit a{
+    color: rgb(228, 191, 199);
+}
+
+.content {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
